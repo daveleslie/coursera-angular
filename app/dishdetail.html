@@ -55,7 +55,7 @@
                             <span class="badge">{{dish.price | currency}}</span>
                         </h2>
                             <p>{{dish.description}}</p>
-                    </h2> <!-- /media-body -->
+                    </div> <!-- /media-body -->
 
                 </div> <!-- /media -->
 
@@ -76,7 +76,7 @@
             </div>
             <div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController">
                     <ul class="list-unstyled" ng-show="!commentForm.$invalid">
-						<p>Comment Preview</p>
+						<p><strong>Comment Preview</strong></p>
 						<blockquote>
                             <p><strong>{{comment.rating}} Stars</strong></p>
                             <p>{{comment.comment}}</p>
@@ -84,8 +84,9 @@
                         </blockquote>
                     </ul>
                 <form class="form-horizontal" name="commentForm" ng-submit="submitComment()" novalidate="">
-                    <div class="col-sm-10 col-sm-offset-2">
+                    <div class="col-sm-12">
                         <h3>Add a comment</h3>
+                        <p style="padding: 10px;"></p>
                     </div>
 
                     <div class="form-group" ng-class="{ 'has-error' : commentForm.author.$error.required && !commentForm.author.$pristine }">
@@ -126,10 +127,13 @@
     <!-- build:js scripts/main.js -->
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
     <!-- endbuild -->
 
 
 
 
 
-</body></html>
+</body>
+</html>
